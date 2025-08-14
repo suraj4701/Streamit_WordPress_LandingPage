@@ -69,4 +69,30 @@ const EnvantoStreamitVerify = async (page, locator) => {
     return newPage;
 }
 
-module.exports = { WebsiteVerify, AdminPanelVerify, TrustpilotVerify, BookcallVerify, CommonLinkVerify, EnvantoStreamitVerify }
+const EnvantoStreamitFlutterAppVerify = async (page, locator) => {
+
+    const [newPage] = await Promise.all([
+        page.context().waitForEvent('page'),
+        locator.click()
+    ])
+    const iqonicDesignSpanLocator = newPage.locator("//body/div[1]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/h1[1]");
+    const verifytext = await iqonicDesignSpanLocator.textContent();
+    expect(verifytext).toContain('Streamit - Movie, TV Show, Video Streaming Flutter App With WordPress Backend');
+    return newPage;
+}
+
+const UserAppPlaystore = async (page, locator) => {
+
+    const [newPage] = await Promise.all([
+        page.context().waitForEvent('page'),
+        locator.click()
+    ])
+    const newPageUrl = newPage.url();
+    expect(newPageUrl).toBe("https://play.google.com/store/apps/details?id=com.iqonic.streamit&hl=en_IN");
+    const trustpilotLocator = newPage.locator("//div[@class='Fd93Bb F5UCq p5VxAd']//h1");
+    const verifytext = await trustpilotLocator.textContent();
+    expect(verifytext).toContain('Streamit - Video Streaming');
+    return newPage;
+}
+
+module.exports = { WebsiteVerify, AdminPanelVerify, TrustpilotVerify, BookcallVerify, CommonLinkVerify, EnvantoStreamitVerify, EnvantoStreamitFlutterAppVerify, UserAppPlaystore }
