@@ -20,7 +20,7 @@ const AdminPanelVerify = async (page, locator) => {
     ])
     await newPage.waitForLoadState('networkidle');
     const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://streamit-wordpress.iqonic.design/");
+    expect(newPageUrl).toBe("https://templates.iqonic.design/streamit-dist/intro/");
     return newPage;
 }
 

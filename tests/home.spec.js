@@ -8,11 +8,11 @@ test("Home User Website Verify", async ({ page }) => {
     await WebsiteVerify(page, adminpanelLocator);
 })
 
-// test.only("Home AdminPanel Verify", async ({ page }) => {
-//     await page.goto(home_url);
-//     const adminpanelLocator = page.locator("//a[@href='https://templates.iqonic.design/streamit-dist/intro/']");
-//     await AdminPanelVerify(page, adminpanelLocator);
-// })
+test("Home AdminPanel Verify", async ({ page }) => {
+    await page.goto(home_url);
+    const adminpanelLocator = page.locator("//a[@href='https://templates.iqonic.design/streamit-dist/intro/']");
+    await AdminPanelVerify(page, adminpanelLocator);
+})
 
 test("Home Trustpilot Verify", async ({ page }) => {
     await page.goto(home_url);
