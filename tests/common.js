@@ -42,7 +42,7 @@ const BookcallVerify = async (page, locator) => {
         locator.click()
     ])
     const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://tidycal.com/iqonicdesign/streamit-demo");
+    expect(newPageUrl).toBe("https://streamit.iqonic.design/streamit-demo-call/");
     return newPage;
 }
 
@@ -77,7 +77,7 @@ const EnvantoStreamitFlutterAppVerify = async (page, locator) => {
     ])
     const iqonicDesignSpanLocator = newPage.locator("//body/div[1]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/h1[1]");
     const verifytext = await iqonicDesignSpanLocator.textContent();
-    expect(verifytext).toContain('Streamit - Movie, TV Show, Video Streaming Flutter App With WordPress Backend');
+    expect(verifytext).toContain('Streamit – OTT Video Streaming Flutter App With WordPress Backend (Movies, TV Shows, and Live TV)');
     return newPage;
 }
 

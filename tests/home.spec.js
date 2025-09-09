@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { BookcallVerify, CommonLinkVerify, EnvantoStreamitVerify, TrustpilotVerify, WebsiteVerify } from './common';
+import { AdminPanelVerify, BookcallVerify, CommonLinkVerify, EnvantoStreamitVerify, TrustpilotVerify, WebsiteVerify } from './common';
 const home_url = process.env.HOME_URL;
 
 test("Home User Website Verify", async ({ page }) => {
@@ -8,7 +8,7 @@ test("Home User Website Verify", async ({ page }) => {
     await WebsiteVerify(page, adminpanelLocator);
 })
 
-// test("Home AdminPanel Verify", async ({ page }) => {
+// test.only("Home AdminPanel Verify", async ({ page }) => {
 //     await page.goto(home_url);
 //     const adminpanelLocator = page.locator("//a[@href='https://templates.iqonic.design/streamit-dist/intro/']");
 //     await AdminPanelVerify(page, adminpanelLocator);
@@ -123,7 +123,7 @@ test("Home Watch Now", async ({ page }) => {
 
 test("Home Talk to an OTT Expert", async ({ page }) => {
     await page.goto(home_url);
-    const EnvantoVerifyLocator = page.locator("//div[@class='elementor-element elementor-element-a9daf17 elementor-widget elementor-widget-button']//a[@class='elementor-button elementor-button-link elementor-size-sm']");
+    const EnvantoVerifyLocator = page.locator("//div[@class='elementor-element elementor-element-fa5ac15 elementor-widget elementor-widget-button']//a[@class='elementor-button elementor-button-link elementor-size-sm']");
     await EnvantoVerifyLocator.scrollIntoViewIfNeeded();
     await BookcallVerify(page, EnvantoVerifyLocator);
 })
